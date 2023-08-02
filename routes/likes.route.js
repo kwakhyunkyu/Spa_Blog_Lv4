@@ -4,7 +4,7 @@ const authMiddleware = require('../middlewares/auth-middleware');
 const router = express.Router();
 
 // 좋아요 생성 또는 취소 API
-router.post('/:postId/likes', authMiddleware, async (req, res) => {
+router.post('/likes/:postId', authMiddleware, async (req, res) => {
   const { userId } = res.locals.user;
   const { postId } = req.params;
 
